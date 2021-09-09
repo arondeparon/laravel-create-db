@@ -16,15 +16,9 @@ class LaravelCreateDbCommand extends Command
         $schema = $this->argument('schema') ?? $this->ask('What is the name of your database schema?');
         $connection = $this->option('connection') ?? DB::getDefaultConnection();
 
-        $databaseExists = DB::connection($connection)->select("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$schema}'");
+        config(["database.connections.{$connection}.database" => null]);
 
-        if (! empty($databaseExists)) {
-            $this->error("Database {$schema} already exists.");
-
-            return Command::FAILURE;
-        }
-
-        DB::connection($connection)->statement("CREATE DATABASE {$schema}");
+        DB::connection($connection)->statement("CREATE DATABASE IF NOT EXISTS {$schema}");
 
         $this->info("Database {$schema} has succesfully been created.");
 
