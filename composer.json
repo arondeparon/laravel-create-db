@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "arondeparon/laravel-create-db",
+    "description": "A package that adds database creation to your Laravel app via Artisan.",
     "keywords": [
-        ":vendor_name",
+        "ArondeParon",
         "laravel",
-        ":package_slug"
+        "laravel-create-db"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/arondeparon/laravel-create-db",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Aron Rotteveel",
+            "email": "hi@aron.codes",
             "role": "Developer"
         }
     ],
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "ArondeParon\\LaravelCreateDb\\": "src",
+            "ArondeParon\\LaravelCreateDb\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "ArondeParon\\LaravelCreateDb\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "ArondeParon\\LaravelCreateDb\\LaravelCreateDbServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "LaravelCreateDb": "ArondeParon\\LaravelCreateDb\\LaravelCreateDbFacade"
             }
         }
     },
