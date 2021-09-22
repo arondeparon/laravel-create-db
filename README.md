@@ -21,7 +21,7 @@ composer require arondeparon/laravel-create-db
 ## Usage
 
 ```php
-php artisan migrate:create-database mydatabase [--connection myconnection]
+php artisan migrate:create-db mydatabase [--connection myconnection]
 ```
 
 ## Contributing
